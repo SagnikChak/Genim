@@ -20,7 +20,7 @@ router.route('/').post(async (req, res) => {
         
         const aiResponse = await openai.images.generate({
             prompt,
-            model: "dall-e-3"
+            model: "dall-e-3",
             n: 1,
             size: '1024x1024',
             response_format: 'b64_json',
