@@ -24,11 +24,11 @@ const Home = () => {
       try {
         setLoading(true);
         
-        const response = await fetch("http://localhost:8080/api/v1/post", {
+        const response = await fetch("https://genim.onrender.com/api/v1/post", {
           method: "GET",
           mode: "cors",
           headers: {
-            "Access-Control-Allow-Origin": "http://localhost:8080",
+            "Access-Control-Allow-Origin": "https://genim.onrender.com",
             "Access-Control-Allow-Credentials": "true",
             "Content-Type": "application/json",
           },

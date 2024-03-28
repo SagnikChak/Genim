@@ -20,16 +20,19 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true);
         
-        const response = await fetch("http://localhost:8080/api/v1/dalle", {
-          method: "POST",
-          mode: "cors",
-          headers: {
-            'Access-Control-Allow-Origin': 'http://localhost:8080',
-            'Access-Control-Allow-Credentials': 'true',
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ prompt: form.prompt }),
-        });
+        const response = await fetch(
+          "https://genim.onrender.com/api/v1/dalle",
+          {
+            method: "POST",
+            mode: "cors",
+            headers: {
+              "Access-Control-Allow-Origin": "https://genim.onrender.com",
+              "Access-Control-Allow-Credentials": "true",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ prompt: form.prompt }),
+          }
+        );
 
         const data = await response.json();
 
@@ -51,11 +54,11 @@ const CreatePost = () => {
       try {
         setLoading(true);
 
-        const response = await fetch("http://localhost:8080/api/v1/post", {
+        const response = await fetch("https://genim.onrender.com/api/v1/post", {
           method: "POST",
           mode: "cors",
           headers: {
-            "Access-Control-Allow-Origin": "http://localhost:8080",
+            "Access-Control-Allow-Origin": "https://genim.onrender.com",
             "Access-Control-Allow-Credentials": "true",
             "Content-Type": "application/json",
           },
